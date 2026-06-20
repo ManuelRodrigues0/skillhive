@@ -19,7 +19,12 @@ const Requests = () => {
       const res = await requestService.getRequests({ status: 'pending' });
       setRequests(res.data.requests || []);
     } catch (err) {
-      setError('Unable to load requests.');
+      console.error('Failed to load requests:', err);
+      if (err.response?.status === 401) {
+        setError('Please log in to view requests.');
+      } else {
+        setError('Unable to load requests. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
