@@ -44,6 +44,9 @@ const Navigation = () => {
               <Link to="/find-mentor" className={styles.navLink}>
                 Find Mentors
               </Link>
+              <Link to="/requests" className={styles.navLink}>
+                Requests
+              </Link>
               <Link to="/profile" className={styles.navLink}>
                 Profile
               </Link>

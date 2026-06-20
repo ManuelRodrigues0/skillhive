@@ -11,6 +11,7 @@ import MySkills from './pages/MySkills';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import FindMentor from './pages/FindMentor';
+import Requests from './pages/Requests';
 import './styles/App.css';
 
 const PrivateRoute = ({ children }) => {
@@ -98,6 +99,14 @@ function AppRoutes() {
         element={
           <PrivateRoute>
             <FindMentor />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/requests"
+        element={
+          <PrivateRoute>
+            <Requests />
           </PrivateRoute>
         }
       />
