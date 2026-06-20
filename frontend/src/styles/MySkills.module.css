@@ -1,0 +1,250 @@
+.container {
+  min-height: calc(100vh - 68px);
+  background: var(--color-bg);
+  padding: 30px 20px 56px;
+}
+
+.skillsContainer {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.skillsContainer h1 {
+  color: var(--color-text);
+  margin-bottom: 6px;
+  font-size: 2rem;
+}
+
+.skillsContainer > p,
+.headerRow p {
+  color: var(--color-muted);
+}
+
+.addBtn,
+.submitBtn,
+.cancelBtn,
+.deleteBtn {
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.addBtn {
+  min-height: 42px;
+  padding: 0 16px;
+  background: var(--color-primary);
+  color: white;
+  white-space: nowrap;
+}
+
+.addBtn:hover,
+.submitBtn:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.error {
+  background: #fef2f2;
+  color: var(--color-danger);
+  padding: 14px;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.form {
+  background: var(--color-surface);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup label,
+.checkboxLabel {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 18px;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.18s ease;
+  background: #fff;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+.formActions {
+  display: flex;
+  gap: 10px;
+}
+
+.submitBtn,
+.cancelBtn {
+  min-height: 42px;
+  padding: 0 18px;
+}
+
+.submitBtn {
+  background: var(--color-primary);
+  color: white;
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.cancelBtn {
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.skillsList {
+  display: grid;
+  gap: 16px;
+}
+
+.noSkills {
+  text-align: center;
+  padding: 36px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  font-weight: 700;
+}
+
+.skillCard {
+  background: var(--color-surface);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.skillHeader h3 {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.category,
+.level,
+.experience,
+.teaching {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.category {
+  background: #eff6ff;
+  color: var(--color-primary);
+}
+
+.description {
+  color: var(--color-muted);
+  margin-bottom: 14px;
+}
+
+.skillInfo {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.level,
+.experience {
+  background: var(--color-surface-muted);
+  color: var(--color-muted);
+}
+
+.teaching {
+  background: #ecfdf5;
+  color: var(--color-success);
+}
+
+.deleteBtn {
+  min-height: 36px;
+  padding: 0 14px;
+  background: #fef2f2;
+  color: var(--color-danger);
+  border: 1px solid #fecaca;
+}
+
+.deleteBtn:hover {
+  background: #fee2e2;
+}
+
+@media (max-width: 640px) {
+  .headerRow {
+    flex-direction: column;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .skillHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

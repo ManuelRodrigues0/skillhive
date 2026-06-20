@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: skillhive-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_DIALECT
+        value: sqlite
+      - key: FRONTEND_URL
+        sync: false
+    autoDeploy: true
+
+  - type: web
+    name: skillhive-frontend
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false
+      - key: REACT_APP_SOCKET_URL
+        sync: false
+    autoDeploy: true

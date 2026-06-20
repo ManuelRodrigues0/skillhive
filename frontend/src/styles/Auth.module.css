@@ -1,0 +1,121 @@
+.authContainer {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-bg);
+  padding: 34px 20px;
+}
+
+.authBox {
+  background: var(--color-surface);
+  padding: 34px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 460px;
+}
+
+.authBox h1 {
+  color: var(--color-text);
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.authBox p {
+  color: var(--color-muted);
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.error {
+  background: #fef2f2;
+  color: var(--color-danger);
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+  border: 1px solid #fecaca;
+  font-weight: 700;
+}
+
+.formGroup {
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  transition: all 0.18s ease;
+  background: #fff;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.submitBtn {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 16px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  margin-top: 6px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.link {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+  color: var(--color-muted);
+}
+
+.link a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.link a:hover {
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 480px) {
+  .authBox {
+    padding: 24px;
+  }
+
+  .authBox h1 {
+    font-size: 1.6rem;
+  }
+}

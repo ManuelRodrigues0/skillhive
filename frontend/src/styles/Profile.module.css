@@ -1,0 +1,269 @@
+.container {
+  min-height: calc(100vh - 68px);
+  background: var(--color-bg);
+  padding: 30px 20px 56px;
+}
+
+.profileBox {
+  max-width: 840px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.profileHeader {
+  background: #0f172a;
+  color: white;
+  padding: 34px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.profilePhoto {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profilePhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.profileInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.profileInfo h1 {
+  margin: 0 0 5px 0;
+  font-size: 1.85rem;
+  overflow-wrap: anywhere;
+}
+
+.email {
+  margin: 0;
+  opacity: 0.85;
+  overflow-wrap: anywhere;
+}
+
+.editBtn {
+  min-height: 42px;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 900;
+  transition: all 0.18s ease;
+}
+
+.editBtn:hover {
+  background: white;
+  color: #0f172a;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 26px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+  gap: 12px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-muted);
+  padding: 18px;
+  border-radius: var(--radius-sm);
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.statLabel {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.form,
+.section,
+.bioSection {
+  padding: 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.notice,
+.error {
+  margin: 20px 28px 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+}
+
+.notice {
+  background: #ecfdf5;
+  color: var(--color-success);
+  border: 1px solid #bbf7d0;
+}
+
+.error {
+  background: #fef2f2;
+  color: var(--color-danger);
+  border: 1px solid #fecaca;
+}
+
+.formGroup {
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.18s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.submitBtn {
+  min-height: 42px;
+  padding: 0 18px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1rem;
+  transition: all 0.18s ease;
+}
+
+.submitBtn:hover {
+  background: var(--color-primary-dark);
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.bioSection h3,
+.section h3 {
+  margin-top: 0;
+  color: var(--color-text);
+  margin-bottom: 14px;
+}
+
+.bioSection p {
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.label {
+  font-weight: 800;
+  color: var(--color-muted);
+}
+
+.value {
+  color: var(--color-text);
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  padding: 20px 28px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dangerBtn {
+  min-height: 40px;
+  padding: 0 16px;
+  background: #fef2f2;
+  color: var(--color-danger);
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 900;
+  transition: all 0.18s ease;
+}
+
+.dangerBtn:hover {
+  background: #fee2e2;
+}
+
+@media (max-width: 640px) {
+  .profileHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .profileInfo h1 {
+    font-size: 1.35rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .infoItem {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .value {
+    text-align: left;
+  }
+}
