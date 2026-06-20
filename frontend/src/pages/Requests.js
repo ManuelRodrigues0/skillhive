@@ -17,14 +17,18 @@ const Requests = () => {
   const loadRequests = async () => {
     try {
       const res = await requestService.getRequests({ status: 'pending' });
-      setRequests(res.data.requests || []);
+      setRequests(Array.isArray(res.data?.requests) ? res.data.requests : []);
+      setError('');
     } catch (err) {
       console.error('Failed to load requests:', err);
       if (err.response?.status === 401) {
         setError('Please log in to view requests.');
+      } else if (err.code === 'ECONNABORTED' || err.code === 'ERR_NETWORK') {
+        setError('Cannot connect to server. Please check your internet connection.');
       } else {
-        setError('Unable to load requests. Please try again.');
+        setError('Unable to load requests. Please try again later.');
       }
+      setRequests([]);
     } finally {
       setLoading(false);
     }
