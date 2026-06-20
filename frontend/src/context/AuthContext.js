@@ -13,7 +13,10 @@ export const AuthProvider = ({ children }) => {
       authService
         .getCurrentUser()
         .then((res) => setUser(res.data))
-        .catch(() => localStorage.removeItem('token'))
+        .catch((err) => {
+          console.error('Failed to restore session:', err);
+          localStorage.removeItem('token');
+        })
         .finally(() => setLoading(false));
     } else {
       setLoading(false);
