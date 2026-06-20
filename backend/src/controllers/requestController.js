@@ -75,11 +75,14 @@ exports.getRequests = async (req, res) => {
       order: [['createdAt', 'DESC']],
     });
 
+    const requestsWithUsers = await attachParticipants(requests);
+
     return res.json({
-      requests: await attachParticipants(requests),
-      count: requests.length,
+      requests: requestsWithUsers,
+      count: requestsWithUsers.length,
     });
   } catch (error) {
+    console.error('Error fetching requests:', error);
     return res.status(500).json({ message: 'Failed to fetch requests', error: error.message });
   }
 };
